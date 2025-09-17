@@ -17,7 +17,7 @@ class ChatFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.messages.observe(requireActivity()) {
+        viewModel.messages.observe(viewLifecycleOwner) {
             binding.messages.adapter = MessagesAdapter(it)
         }
     }
